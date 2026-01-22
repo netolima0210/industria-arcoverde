@@ -34,65 +34,74 @@ const categorias = [
         produtos: [
             {
                 id: 5,
-                nome: "Lava-Louças Maçã 1,8L",
-                imagem: "/produtos/linha-riso/lava-loucas-maca-1-8l.png",
+                nome: "Lava-Louças Limão 500ml",
+                imagem: "/produtos/linha-riso/lava-loucas-limao-500ml.png",
             },
             {
                 id: 6,
-                nome: "Lava-Louças Maçã 5L",
-                imagem: "/produtos/linha-riso/lava-loucas-maca-5l.png",
-            },
-            {
-                id: 7,
-                nome: "Lava-Louças Neutro 1,8L",
-                imagem: "/produtos/linha-riso/lava-loucas-neutro-1-8l.png",
-            },
-            {
-                id: 8,
-                nome: "Lava-Louças Maçã Verde 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-maca-verde-500ml.png",
-            },
-            {
-                id: 9,
-                nome: "Lava-Louças Neutro 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-neutro-500ml.png",
-            },
-            {
-                id: 10,
-                nome: "Lava-Louças Uva 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-uva-500ml.png",
+                nome: "Lava-Louças Maçã 500ml",
+                imagem: "/produtos/linha-riso/lava-loucas-maca-500ml.png",
             },
         ],
     },
     {
-        nome: "Lava-Roupas",
+        nome: "Limpa Alumínio",
         produtos: [
             {
-                id: 11,
-                nome: "Lava-Roupas Aconchego 1,8L",
-                imagem: "/produtos/linha-riso/lava-roupas-aconchego-1-8l.png",
+                id: 7,
+                nome: "Limpa Alumínio Rosa 500ml",
+                imagem: "/produtos/linha-riso/limpa-aluminio-rosa-500ml.png",
             },
             {
+                id: 8,
+                nome: "Limpa Alumínio Uva 500ml",
+                imagem: "/produtos/linha-riso/limpa-aluminio-uva-500ml.png",
+            },
+            {
+                id: 9,
+                nome: "Limpa Alumínio Tradicional 500ml",
+                imagem: "/produtos/linha-riso/limpa-aluminio-tradicional-500ml.png",
+            },
+        ],
+    },
+    {
+        nome: "Sabão Riso Tradicional",
+        produtos: [
+            {
+                id: 10,
+                nome: "Sabão Tradicional Amarelo 800g",
+                imagem: "/produtos/linha-riso/sabao-tradicional-amarelo-800g.png",
+            },
+            {
+                id: 11,
+                nome: "Sabão Tradicional Verde 800g",
+                imagem: "/produtos/linha-riso/sabao-tradicional-verde-800g.png",
+            },
+        ],
+    },
+    {
+        nome: "Sabão Riso Extra",
+        produtos: [
+            {
                 id: 12,
-                nome: "Lava-Roupas Aconchego 5L",
-                imagem: "/produtos/linha-riso/lava-roupas-aconchego-5l.png",
+                nome: "Sabão Extra Amarelo 800g",
+                imagem: "/produtos/linha-riso/sabao-extra-amarelo-800g.png",
             },
             {
                 id: 13,
-                nome: "Lava-Roupas Coco 1,8L",
-                imagem: "/produtos/linha-riso/lava-roupas-coco-1-8l.png",
+                nome: "Sabão Extra Azul 800g",
+                imagem: "/produtos/linha-riso/sabao-extra-azul-800g.png",
             },
             {
                 id: 14,
-                nome: "Lava-Roupas Floral 1,8L",
-                imagem: "/produtos/linha-riso/lava-roupas-floral-1-8l.png",
-            },
-            {
-                id: 15,
-                nome: "Lava-Roupas Floral 5L",
-                imagem: "/produtos/linha-riso/lava-roupas-floral-5l.png",
+                nome: "Sabão Extra Verde 800g",
+                imagem: "/produtos/linha-riso/sabao-extra-verde-800g.png",
             },
         ],
+    },
+    {
+        nome: "Pastilha Sanitária Riso",
+        produtos: [],
     },
 ];
 
