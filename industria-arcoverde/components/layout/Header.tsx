@@ -85,6 +85,11 @@ export function Header() {
               >
                 <Link
                   href={link.href}
+                  onClick={() => {
+                    if (link.name === "Home") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
                   className={cn(
                     "relative text-base font-medium transition-colors flex items-center gap-1 py-2",
                     "text-white/90 hover:text-white group-hover:text-white"
@@ -164,7 +169,12 @@ export function Header() {
                   <Link
                     href={link.href}
                     className="block text-lg text-gray-800 font-semibold hover:text-primary transition-colors py-2"
-                    onClick={() => !link.children && setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      if (!link.children) setIsMobileMenuOpen(false);
+                      if (link.name === "Home") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
                   >
                     {link.name}
                   </Link>

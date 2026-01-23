@@ -73,7 +73,7 @@ export function Structure() {
                     {/* Vídeo Institucional */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-                        className="relative w-full aspect-[9/16] max-h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gray-900 border-4 border-white flex items-center justify-center group"
+                        className="relative w-full aspect-[9/16] max-h-[500px] rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group"
                     >
                         <video
                             className="w-full h-full object-contain"

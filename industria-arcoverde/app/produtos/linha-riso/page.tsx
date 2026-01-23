@@ -2,164 +2,19 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getProductsByCategory, Produto } from "@/data/linha-riso";
 
-const categorias = [
-    {
-        nome: "Desinfetantes",
-        produtos: [
-            {
-                id: 1,
-                nome: "Desinfetante Talco 5L",
-                imagem: "/produtos/linha-riso/desinfetante-talco-5l.png",
-            },
-            {
-                id: 15,
-                nome: "Desinfetante Talco 1,8L",
-                imagem: "/produtos/linha-riso/desinfetante-talco-1-8l.png",
-            },
-            {
-                id: 3,
-                nome: "Desinfetante Lavanda 5L",
-                imagem: "/produtos/linha-riso/desinfetante-lavanda-5l.png",
-            },
-            {
-                id: 16,
-                nome: "Desinfetante Lavanda 1,8L",
-                imagem: "/produtos/linha-riso/desinfetante-lavanda-1-8l.png",
-            },
-            {
-                id: 2,
-                nome: "Desinfetante Brisa do Mar 5L",
-                imagem: "/produtos/linha-riso/desinfetante-5l.png",
-            },
-            {
-                id: 17,
-                nome: "Desinfetante Brisa do Mar 1,8L",
-                imagem: "/produtos/linha-riso/desinfetante-1-8l.png",
-            },
-            {
-                id: 18,
-                nome: "Desinfetante Herbal 5L",
-                imagem: "/produtos/linha-riso/desinfetante-herbal-5l.png",
-            },
-            {
-                id: 19,
-                nome: "Desinfetante Herbal 1,8L",
-                imagem: "/produtos/linha-riso/desinfetante-herbal-1-8l.png",
-            },
-        ],
-    },
-    {
-        nome: "Lava-Louças",
-        produtos: [
-            {
-                id: 5,
-                nome: "Lava-Louças Limão 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-limao-500ml.png",
-            },
-            {
-                id: 6,
-                nome: "Lava-Louças Maçã 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-maca-500ml.png",
-            },
-            {
-                id: 20,
-                nome: "Lava-Louças Neutro 500ml",
-                imagem: "/produtos/linha-riso/lava-loucas-neutro-500ml.png",
-            },
-        ],
-    },
-    {
-        nome: "Limpa Alumínio",
-        produtos: [
-            {
-                id: 7,
-                nome: "Limpa Alumínio Rosa 500ml",
-                imagem: "/produtos/linha-riso/limpa-aluminio-rosa-500ml.png",
-            },
-            {
-                id: 8,
-                nome: "Limpa Alumínio Uva 500ml",
-                imagem: "/produtos/linha-riso/limpa-aluminio-uva-500ml.png",
-            },
-            {
-                id: 9,
-                nome: "Limpa Alumínio Tradicional 500ml",
-                imagem: "/produtos/linha-riso/limpa-aluminio-tradicional-500ml.png",
-            },
-        ],
-    },
-    {
-        nome: "Sabão Riso Tradicional",
-        produtos: [
-            {
-                id: 10,
-                nome: "Sabão Tradicional Amarelo 800g",
-                imagem: "/produtos/linha-riso/sabao-tradicional-amarelo-800g.png",
-            },
-            {
-                id: 11,
-                nome: "Sabão Tradicional Verde 800g",
-                imagem: "/produtos/linha-riso/sabao-tradicional-verde-800g.png",
-            },
-        ],
-    },
-    {
-        nome: "Sabão Riso Extra",
-        produtos: [
-            {
-                id: 12,
-                nome: "Sabão Extra Amarelo 800g",
-                imagem: "/produtos/linha-riso/sabao-extra-amarelo-800g.png",
-            },
-            {
-                id: 13,
-                nome: "Sabão Extra Azul 800g",
-                imagem: "/produtos/linha-riso/sabao-extra-azul-800g.png",
-            },
-            {
-                id: 14,
-                nome: "Sabão Extra Verde 800g",
-                imagem: "/produtos/linha-riso/sabao-extra-verde-800g.png",
-            },
-        ],
-    },
-    {
-        nome: "Pastilha Sanitária Riso",
-        produtos: [
-            {
-                id: 21,
-                nome: "Pastilha Sanitária Brisa do Mar 30g",
-                imagem: "/produtos/linha-riso/pastilha-sanitaria-brisa-do-mar.png",
-            },
-            {
-                id: 22,
-                nome: "Pastilha Sanitária Eucalipto 30g",
-                imagem: "/produtos/linha-riso/pastilha-sanitaria-eucalipto.png",
-            },
-            {
-                id: 23,
-                nome: "Pastilha Sanitária Lavanda 30g",
-                imagem: "/produtos/linha-riso/pastilha-sanitaria-lavanda.png",
-            },
-            {
-                id: 24,
-                nome: "Pastilha Sanitária Floral 30g",
-                imagem: "/produtos/linha-riso/pastilha-sanitaria-floral.png",
-            },
-        ],
-    },
-    {
-        nome: "Naftalina Riso",
-        produtos: [
-            {
-                id: 25,
-                nome: "Naftalina Riso 30g",
-                imagem: "/produtos/linha-riso/naftalina-riso-30g.png",
-            },
-        ],
-    },
+// Ordem das categorias para exibição
+const categoriasOrdem = [
+    "Desinfetantes",
+    "Lava-Louças",
+    "Limpa Alumínio",
+    "Sabão Riso Tradicional",
+    "Sabão Riso Extra",
+    "Pastilha Sanitária Riso",
+    "Naftalina Riso",
 ];
 
 const containerVariants = {
@@ -180,6 +35,16 @@ const itemVariants = {
 };
 
 export default function LinhaRisoPage() {
+    const produtosPorCategoria = getProductsByCategory();
+
+    // Ordenar categorias conforme a ordem desejada
+    const categoriasOrdenadas = categoriasOrdem
+        .filter((cat) => produtosPorCategoria[cat])
+        .map((cat) => ({
+            nome: cat,
+            produtos: produtosPorCategoria[cat],
+        }));
+
     return (
         <main className="min-h-screen pt-24 pb-16">
             <div className="container mx-auto px-4 md:px-6">
@@ -209,7 +74,7 @@ export default function LinhaRisoPage() {
 
                     {/* Right Column - Products by Category */}
                     <div className="lg:col-span-8 space-y-6">
-                        {categorias.map((categoria, catIndex) => (
+                        {categoriasOrdenadas.map((categoria) => (
                             <motion.div
                                 key={categoria.nome}
                                 variants={containerVariants}
@@ -223,7 +88,7 @@ export default function LinhaRisoPage() {
 
                                 {/* Products Grid */}
                                 <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                                    {categoria.produtos.map((produto, index) => (
+                                    {categoria.produtos.map((produto: Produto, index: number) => (
                                         <motion.div
                                             key={produto.id}
                                             variants={itemVariants}
@@ -236,21 +101,26 @@ export default function LinhaRisoPage() {
                                                 categoria.produtos.length === 1 && "col-span-2"
                                             )}
                                         >
-                                            {/* Product Image */}
-                                            <div className="relative w-full h-64 flex items-center justify-center p-2 mb-2">
-                                                <Image
-                                                    src={produto.imagem}
-                                                    alt={produto.nome}
-                                                    width={200}
-                                                    height={280}
-                                                    className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
-                                                />
-                                            </div>
+                                            <Link
+                                                href={`/produtos/linha-riso/${produto.slug}`}
+                                                className="flex flex-col items-center w-full cursor-pointer"
+                                            >
+                                                {/* Product Image */}
+                                                <div className="relative w-full h-64 flex items-center justify-center p-2 mb-2">
+                                                    <Image
+                                                        src={produto.imagem}
+                                                        alt={produto.nome}
+                                                        width={200}
+                                                        height={280}
+                                                        className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
+                                                    />
+                                                </div>
 
-                                            {/* Product Name */}
-                                            <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center">
-                                                {produto.nome}
-                                            </h3>
+                                                {/* Product Name */}
+                                                <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-blue-600 transition-colors">
+                                                    {produto.nome}
+                                                </h3>
+                                            </Link>
                                         </motion.div>
                                     ))}
                                 </div>
