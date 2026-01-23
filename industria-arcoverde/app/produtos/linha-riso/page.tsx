@@ -9,13 +9,13 @@ const categorias = [
         produtos: [
             {
                 id: 1,
-                nome: "Desinfetante Brisa do Mar 1,8L",
-                imagem: "/produtos/linha-riso/desinfetante-1-8l.png",
+                nome: "Desinfetante Talco 5L",
+                imagem: "/produtos/linha-riso/desinfetante-talco-5l.png",
             },
             {
-                id: 2,
-                nome: "Desinfetante Brisa do Mar 5L",
-                imagem: "/produtos/linha-riso/desinfetante-5l.png",
+                id: 15,
+                nome: "Desinfetante Talco 1,8L",
+                imagem: "/produtos/linha-riso/desinfetante-talco-1-8l.png",
             },
             {
                 id: 3,
@@ -23,9 +23,29 @@ const categorias = [
                 imagem: "/produtos/linha-riso/desinfetante-lavanda-5l.png",
             },
             {
-                id: 4,
-                nome: "Desinfetante Talco 5L",
-                imagem: "/produtos/linha-riso/desinfetante-talco-5l.png",
+                id: 16,
+                nome: "Desinfetante Lavanda 1,8L",
+                imagem: "/produtos/linha-riso/desinfetante-lavanda-1-8l.png",
+            },
+            {
+                id: 2,
+                nome: "Desinfetante Brisa do Mar 5L",
+                imagem: "/produtos/linha-riso/desinfetante-5l.png",
+            },
+            {
+                id: 17,
+                nome: "Desinfetante Brisa do Mar 1,8L",
+                imagem: "/produtos/linha-riso/desinfetante-1-8l.png",
+            },
+            {
+                id: 18,
+                nome: "Desinfetante Herbal 5L",
+                imagem: "/produtos/linha-riso/desinfetante-herbal-5l.png",
+            },
+            {
+                id: 19,
+                nome: "Desinfetante Herbal 1,8L",
+                imagem: "/produtos/linha-riso/desinfetante-herbal-1-8l.png",
             },
         ],
     },
@@ -41,6 +61,11 @@ const categorias = [
                 id: 6,
                 nome: "Lava-Louças Maçã 500ml",
                 imagem: "/produtos/linha-riso/lava-loucas-maca-500ml.png",
+            },
+            {
+                id: 20,
+                nome: "Lava-Louças Neutro 500ml",
+                imagem: "/produtos/linha-riso/lava-loucas-neutro-500ml.png",
             },
         ],
     },
@@ -101,7 +126,38 @@ const categorias = [
     },
     {
         nome: "Pastilha Sanitária Riso",
-        produtos: [],
+        produtos: [
+            {
+                id: 21,
+                nome: "Pastilha Sanitária Brisa do Mar 30g",
+                imagem: "/produtos/linha-riso/pastilha-sanitaria-brisa-do-mar.png",
+            },
+            {
+                id: 22,
+                nome: "Pastilha Sanitária Eucalipto 30g",
+                imagem: "/produtos/linha-riso/pastilha-sanitaria-eucalipto.png",
+            },
+            {
+                id: 23,
+                nome: "Pastilha Sanitária Lavanda 30g",
+                imagem: "/produtos/linha-riso/pastilha-sanitaria-lavanda.png",
+            },
+            {
+                id: 24,
+                nome: "Pastilha Sanitária Floral 30g",
+                imagem: "/produtos/linha-riso/pastilha-sanitaria-floral.png",
+            },
+        ],
+    },
+    {
+        nome: "Naftalina Riso",
+        produtos: [
+            {
+                id: 25,
+                nome: "Naftalina Riso 30g",
+                imagem: "/produtos/linha-riso/naftalina-riso-30g.png",
+            },
+        ],
     },
 ];
 
