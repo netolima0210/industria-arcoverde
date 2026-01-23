@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const categorias = [
     {
@@ -207,7 +208,7 @@ export default function LinhaRisoPage() {
                     </motion.div>
 
                     {/* Right Column - Products by Category */}
-                    <div className="lg:col-span-8 space-y-12">
+                    <div className="lg:col-span-8 space-y-6">
                         {categorias.map((categoria, catIndex) => (
                             <motion.div
                                 key={categoria.nome}
@@ -216,26 +217,33 @@ export default function LinhaRisoPage() {
                                 animate="visible"
                             >
                                 {/* Category Title */}
-                                <h2 className="text-xl md:text-2xl font-bold text-gray-800 text-center mb-8">
+                                <h2 className="text-xl md:text-2xl font-bold text-gray-800 text-center mb-6">
                                     {categoria.nome}
                                 </h2>
 
                                 {/* Products Grid */}
-                                <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto">
-                                    {categoria.produtos.map((produto) => (
+                                <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+                                    {categoria.produtos.map((produto, index) => (
                                         <motion.div
                                             key={produto.id}
                                             variants={itemVariants}
-                                            className="flex flex-col items-center group"
+                                            className={cn(
+                                                "flex flex-col items-center group",
+                                                // Se a categoria tem 3 produtos e este é o último (índice 2),
+                                                // fazemos ele ocupar 2 colunas para ficar centralizado embaixo.
+                                                categoria.produtos.length === 3 && index === 2 && "col-span-2",
+                                                // Se a categoria tem apenas 1 produto (Naftalina), centraliza ele.
+                                                categoria.produtos.length === 1 && "col-span-2"
+                                            )}
                                         >
                                             {/* Product Image */}
-                                            <div className="relative w-full aspect-square flex items-center justify-center p-4 mb-4">
+                                            <div className="relative w-full h-64 flex items-center justify-center p-2 mb-2">
                                                 <Image
                                                     src={produto.imagem}
                                                     alt={produto.nome}
                                                     width={200}
                                                     height={280}
-                                                    className="object-contain max-h-64 group-hover:scale-105 transition-transform duration-300"
+                                                    className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
                                                 />
                                             </div>
 
