@@ -48,7 +48,7 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0D1B4C] backdrop-blur-md",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[hsl(var(--header-deep-navy))] backdrop-blur-md",
         isScrolled
           ? "shadow-lg border-b border-blue-900/50 py-2 h-20"
           : "py-4 h-24"
