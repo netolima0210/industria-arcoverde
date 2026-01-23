@@ -70,18 +70,26 @@ export function Structure() {
                         </div>
                     </motion.div>
 
-                    {/* Placeholder Foto */}
+                    {/* Vídeo Institucional */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-                        className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-gray-200 border-4 border-white flex items-center justify-center group"
+                        className="relative w-full aspect-[9/16] max-h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gray-900 border-4 border-white flex items-center justify-center group"
                     >
-                        <div className="text-center text-gray-400 p-6">
-                            <ImageIcon className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                            <p className="font-semibold text-lg">Espaço para Foto</p>
-                            <p className="text-sm">Sugestão: Foto da equipe ou fachada</p>
-                        </div>
-                        {/* Blob Decorativo */}
-                        <div className="absolute -z-10 -bottom-10 -right-10 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl"></div>
+                        <video
+                            className="w-full h-full object-contain"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            controls
+                            preload="auto"
+                        >
+                            <source src="/assets/missao-video.mp4" type="video/mp4" />
+                            Seu navegador não suporta a exibição de vídeos.
+                        </video>
+
+                        {/* Overlay Gradiente suave para dar profundidade */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </motion.div>
                 </div>
 
