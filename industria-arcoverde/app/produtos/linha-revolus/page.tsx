@@ -4,18 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { getProductsByCategory, Produto } from "@/data/linha-riso";
-
-// Ordem das categorias para exibição
-const categoriasOrdem = [
-    "Desinfetantes",
-    "Lava-Louças",
-    "Limpa Alumínio",
-    "Sabão Riso Tradicional",
-    "Sabão Riso Extra",
-    "Pastilha Sanitária Riso",
-    "Naftalina Riso",
-];
+import { getProductsByCategoryRevolus, ProdutoRevolus } from "@/data/linha-revolus";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,16 +23,13 @@ const itemVariants = {
     },
 };
 
-export default function LinhaRisoPage() {
-    const produtosPorCategoria = getProductsByCategory();
-
-    // Ordenar categorias conforme a ordem desejada
-    const categoriasOrdenadas = categoriasOrdem
-        .filter((cat) => produtosPorCategoria[cat])
-        .map((cat) => ({
-            nome: cat,
-            produtos: produtosPorCategoria[cat],
-        }));
+export default function LinhaRevolusPage() {
+    const produtosPorCategoria = getProductsByCategoryRevolus();
+    const categoriasOrdenadas = Object.keys(produtosPorCategoria).map((categoria) => ({
+        nome: categoria,
+        produtos: produtosPorCategoria[categoria],
+        temImagem: true,
+    }));
 
     return (
         <main className="min-h-screen pt-24 pb-16">
@@ -59,21 +45,21 @@ export default function LinhaRisoPage() {
                         className="lg:col-span-4 lg:sticky lg:top-32"
                     >
                         {/* Decorative Line */}
-                        <div className="w-16 h-1 bg-blue-600 mb-6"></div>
+                        <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 leading-tight mb-6">
-                            Linha Riso
+                        <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 leading-tight mb-6">
+                            Linha Revolus
                         </h1>
 
                         <p className="text-gray-600 text-base leading-relaxed">
-                            Os produtos da Linha Riso possuem fórmulas desenvolvidas para facilitar
-                            a remoção da sujeira, auxiliando na limpeza do seu lar e proporcionando
-                            menos esforço para quem limpa.
+                            A Linha Revolus oferece soluções de alta performance para uso profissional
+                            e industrial. Produtos concentrados que garantem economia, rendimento
+                            e eficiência máxima na higienização de grandes superfícies.
                         </p>
                     </motion.div>
 
                     {/* Right Column - Products by Category */}
-                    <div className="lg:col-span-8 space-y-6">
+                    <div className="lg:col-span-8 space-y-12">
                         {categoriasOrdenadas.map((categoria) => (
                             <motion.div
                                 key={categoria.nome}
@@ -88,31 +74,22 @@ export default function LinhaRisoPage() {
 
                                 {/* Products Grid */}
                                 <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                                    {categoria.produtos.map((produto: Produto, index: number) => (
+                                    {categoria.produtos.map((produto: ProdutoRevolus, index: number) => (
                                         <motion.div
                                             key={produto.id}
                                             variants={itemVariants}
                                             className={cn(
                                                 "flex flex-col items-center group",
-                                                // Se a categoria tem 3 produtos e este é o último (índice 2),
-                                                // fazemos ele ocupar 2 colunas para ficar centralizado embaixo.
-                                                categoria.produtos.length === 3 && index === 2 && "col-span-2",
-                                                // Se a categoria tem apenas 1 produto (Naftalina), centraliza ele.
-                                                categoria.produtos.length === 1 && "col-span-2"
+                                                // Centraliza o último item se a quantidade for ímpar
+                                                categoria.produtos.length % 2 === 1 && index === categoria.produtos.length - 1 && "col-span-2"
                                             )}
                                         >
                                             <Link
-                                                href={`/produtos/linha-riso/${produto.slug}`}
+                                                href={`/produtos/linha-revolus/${produto.slug}`}
                                                 className="flex flex-col items-center w-full cursor-pointer"
                                             >
                                                 {/* Product Image */}
-                                                <div className={cn(
-                                                    "relative w-full flex items-end justify-center p-2 mb-2",
-                                                    // Ajuste para produtos menores (Naftalina, Sabão)
-                                                    ["Naftalina", "Sabão Feneme", "Sabão Arco Verde"].some(cat => categoria.nome.includes(cat)) || categoria.nome.includes("Sabão")
-                                                        ? "h-40"
-                                                        : "h-64"
-                                                )}>
+                                                <div className="relative w-full h-64 flex items-end justify-center p-2 mb-2">
                                                     <Image
                                                         src={produto.imagem}
                                                         alt={produto.nome}
@@ -121,9 +98,7 @@ export default function LinhaRisoPage() {
                                                         className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
                                                     />
                                                 </div>
-
-                                                {/* Product Name */}
-                                                <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-blue-600 transition-colors">
+                                                <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-yellow-600 transition-colors">
                                                     {produto.nome}
                                                 </h3>
                                             </Link>

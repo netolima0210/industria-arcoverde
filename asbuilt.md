@@ -36,10 +36,14 @@ Tabela Principal: `dicas_destaques`
 - [x] Layout Base Limpo
 
 ## 7. Seções da Home (Fase 3)
-- [x] Componente: Hero Section (Com animação de entrada)
+- [x] Componente: Hero Section (Substituído por HeroProducts - Catálogo V1.1)
 - [x] Componente: Quem Somos (Slide-in Left)
 - [x] Componente: Estrutura (Cards Fade-up)
 - [x] Integração na Home Page
+
+## 7.1 Páginas de Produtos
+- [x] Linha Riso: Listagem + Detalhes (`/produtos/linha-riso`)
+- [x] Linha Arco Verde: Listagem + Detalhes (`/produtos/linha-arcoverde`)
 
 ## 8. Integração Backend (Fase 4)
 - [x] Configuração do Supabase Client

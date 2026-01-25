@@ -24,8 +24,8 @@ const navLinks = [
     href: "#produtos",
     children: [
       { name: "Linha Riso", href: "/produtos/linha-riso" },
-      { name: "Linha Arcoverde", href: "#linha-arcoverde" },
-      { name: "Linha Revolus", href: "#linha-revolus" },
+      { name: "Linha Arcoverde", href: "/produtos/linha-arcoverde" },
+      { name: "Linha Revolus", href: "/produtos/linha-revolus" },
     ],
   },
   { name: "Dicas", href: "#dicas" },
