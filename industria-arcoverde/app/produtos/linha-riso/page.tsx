@@ -52,10 +52,7 @@ export default function LinhaRisoPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                     {/* Left Column - Title & Description */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
+                    <div
                         className="lg:col-span-4 lg:sticky lg:top-32"
                     >
                         {/* Decorative Line */}
@@ -70,16 +67,13 @@ export default function LinhaRisoPage() {
                             a remoção da sujeira, auxiliando na limpeza do seu lar e proporcionando
                             menos esforço para quem limpa.
                         </p>
-                    </motion.div>
+                    </div>
 
                     {/* Right Column - Products by Category */}
                     <div className="lg:col-span-8 space-y-6">
                         {categoriasOrdenadas.map((categoria) => (
-                            <motion.div
+                            <div
                                 key={categoria.nome}
-                                variants={containerVariants}
-                                initial="hidden"
-                                animate="visible"
                             >
                                 {/* Category Title */}
                                 <h2 className="text-xl md:text-2xl font-bold text-gray-800 text-center mb-6">
@@ -89,9 +83,8 @@ export default function LinhaRisoPage() {
                                 {/* Products Grid */}
                                 <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
                                     {categoria.produtos.map((produto: Produto, index: number) => (
-                                        <motion.div
+                                        <div
                                             key={produto.id}
-                                            variants={itemVariants}
                                             className={cn(
                                                 "flex flex-col items-center group",
                                                 // Se a categoria tem 3 produtos e este é o último (índice 2),
@@ -127,10 +120,10 @@ export default function LinhaRisoPage() {
                                                     {produto.nome}
                                                 </h3>
                                             </Link>
-                                        </motion.div>
+                                        </div>
                                     ))}
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 

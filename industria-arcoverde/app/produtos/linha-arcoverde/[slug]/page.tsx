@@ -1,7 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeft, Package, Tag } from "lucide-react";
@@ -10,6 +9,7 @@ import { notFound } from "next/navigation";
 
 export default function ProductDetailPage() {
     const params = useParams();
+    const router = useRouter();
     const slug = params.slug as string;
     const produto = getProductBySlugArcoVerde(slug);
 
@@ -27,8 +27,8 @@ export default function ProductDetailPage() {
                     transition={{ duration: 0.4 }}
                     className="mb-8"
                 >
-                    <Link
-                        href="/produtos/linha-arcoverde"
+                    <button
+                        onClick={() => router.back()}
                         className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-800 font-medium transition-colors group"
                     >
                         <ArrowLeft
@@ -36,7 +36,7 @@ export default function ProductDetailPage() {
                             className="group-hover:-translate-x-1 transition-transform"
                         />
                         Voltar para Linha Arcoverde
-                    </Link>
+                    </button>
                 </motion.div>
 
                 {/* Conteúdo Principal */}
