@@ -37,7 +37,7 @@ export function HeroProducts() {
 
     return (
         <section className="w-full pt-28">
-            <div className="relative w-full h-[400px] md:h-auto md:aspect-[3/1] bg-white overflow-hidden group">
+            <div className="relative w-full aspect-[16/9] md:h-auto md:aspect-[3/1] bg-white overflow-hidden group">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={index}
