@@ -5,18 +5,18 @@ import { useState, useEffect } from "react";
 
 const banners = [
     {
-        src: "/hero-arco-verde.jpg",
-        alt: "Linha Arco Verde - Qualidade para toda a casa",
+        src: "/hero-riso-v3.jpg",
+        alt: "Linha Riso - Qualidade e Tradição",
         fit: "cover"
     },
     {
-        src: "/hero-riso.jpg",
-        alt: "Linha Riso - Garantia de Eficácia",
+        src: "/hero-arco-verde-v3.jpg",
+        alt: "Linha Arco Verde - Performance e Limpeza",
         fit: "cover"
     },
     {
-        src: "/hero-revolus.jpg",
-        alt: "Linha Revolus - Tecnologia em Limpeza",
+        src: "/hero-revolus-v3.jpg",
+        alt: "Linha Revolus - Tecnologia Industrial",
         fit: "cover"
     }
 ];
@@ -37,16 +37,21 @@ export function HeroProducts() {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1, ease: "linear" }} // Transição suave
                         className="absolute inset-0 w-full h-full flex items-center justify-center p-0"
                     >
                         <img
                             src={banners[index].src}
                             alt={banners[index].alt}
-                            className={`w-full h-full transition-transform duration-700 ${banners[index].fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                            className={`w-full h-full ${banners[index].fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                            loading="eager"
+                            style={{
+                                imageRendering: 'auto', // Mantém a qualidade original do navegador
+                                backfaceVisibility: 'hidden'
+                            }}
                         />
                     </motion.div>
                 </AnimatePresence>
@@ -67,5 +72,7 @@ export function HeroProducts() {
         </section>
     );
 }
+
+
 
 
