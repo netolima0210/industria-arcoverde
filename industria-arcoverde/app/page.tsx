@@ -1,13 +1,15 @@
 import { HeroProducts } from "@/components/sections/HeroProducts";
 import { Structure } from "@/components/sections/Structure";
-import { Tips } from "@/components/sections/Tips";
+import { TipsSection } from "@/features/tips";
+import { ProductLinesShowcase } from "@/features/product-lines";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-0 min-h-screen">
       <HeroProducts />
+      <ProductLinesShowcase />
       <Structure />
-      <Tips />
+      <TipsSection />
     </main>
   );
 }

@@ -61,13 +61,13 @@ export function Header() {
           className="relative z-10 flex-shrink-0 transition-transform hover:scale-105"
         >
           <Image
-            src="/logo-arcoverde.png"
+            src="/logo-arcoverde-v2.png"
             alt="Indústria Arcoverde"
-            width={180}
-            height={80}
+            width={324}
+            height={144}
             className={cn(
               "w-auto object-contain transition-all duration-300",
-              isScrolled ? "h-12" : "h-16"
+              isScrolled ? "h-20" : "h-28"
             )}
             priority
           />
