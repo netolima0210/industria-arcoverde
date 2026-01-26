@@ -11,6 +11,7 @@ export function ProductLinesShowcase() {
                 <ProductLineCard
                     title="LINHA RISO"
                     description="Eficiência e tradição para o cuidado da sua casa. Produtos desenvolvidos para garantir a melhor limpeza com o carinho que sua família merece."
+                    imageSrc="/pastilha-sanitaria-riso.jpg"
                     colors={{
                         bg: "from-sky-50 to-blue-50",
                         text: "text-sky-600",
