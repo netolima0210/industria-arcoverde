@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import Image from "next/image";
 
 interface ProductLineCardProps {
@@ -14,9 +15,10 @@ interface ProductLineCardProps {
     };
     imageSrc?: string; // Optional real image
     reverse?: boolean; // Text on right, image on left vs opposite
+    href: string; // URL to redirect
 }
 
-export function ProductLineCard({ title, description, colors, imageSrc, reverse = false }: ProductLineCardProps) {
+export function ProductLineCard({ title, description, colors, imageSrc, reverse = false, href }: ProductLineCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -42,12 +44,15 @@ export function ProductLineCard({ title, description, colors, imageSrc, reverse 
                     <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">
                         {description}
                     </p>
-                    <button className={cn(
-                        "px-8 py-3 rounded-full font-bold text-white shadow-lg transform transition-transform hover:scale-105 active:scale-95",
-                        colors.accent
-                    )}>
+                    <Link
+                        href={href}
+                        className={cn(
+                            "inline-block px-8 py-3 rounded-full font-bold text-white shadow-lg transform transition-transform hover:scale-105 active:scale-95 cursor-pointer",
+                            colors.accent
+                        )}
+                    >
                         Conhecer Produtos
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Image / Placeholder Slot */}

@@ -12,6 +12,7 @@ export function ProductLinesShowcase() {
                     title="LINHA RISO"
                     description="Eficiência e tradição para o cuidado da sua casa. Produtos desenvolvidos para garantir a melhor limpeza com o carinho que sua família merece."
                     imageSrc="/pastilha-sanitaria-riso.jpg"
+                    href="/produtos/linha-riso"
                     colors={{
                         bg: "from-sky-50 to-blue-50",
                         text: "text-sky-600",
@@ -23,6 +24,8 @@ export function ProductLinesShowcase() {
                 <ProductLineCard
                     title="LINHA ARCOVERDE"
                     description="Soluções profissionais de alta performance. A força necessária para os desafios pesados do dia a dia industrial e comercial."
+                    imageSrc="/lava-loucas-arcoverde-maca-verde.jpg"
+                    href="/produtos/linha-arcoverde"
                     colors={{
                         bg: "from-emerald-50 to-teal-50",
                         text: "text-emerald-600",
@@ -35,10 +38,12 @@ export function ProductLinesShowcase() {
                 <ProductLineCard
                     title="LINHA REVOLUS"
                     description="Inovação e tecnologia em limpeza automotiva. O brilho e proteção que seu veículo precisa com fórmulas avançadas."
+                    imageSrc="/shampoo-automotivo-revolus.jpg"
+                    href="/produtos/linha-revolus"
                     colors={{
-                        bg: "from-orange-50 to-red-50",
-                        text: "text-orange-600",
-                        accent: "bg-orange-500 hover:bg-orange-600"
+                        bg: "from-yellow-50 to-amber-50",
+                        text: "text-yellow-500",
+                        accent: "bg-yellow-500 hover:bg-yellow-600"
                     }}
                 />
             </div>
