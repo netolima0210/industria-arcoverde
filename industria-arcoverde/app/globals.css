@@ -141,6 +141,11 @@
 
 
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* aprox 96px (header height) */
+  }
+
   body {
     @apply bg-background text-foreground;
   }

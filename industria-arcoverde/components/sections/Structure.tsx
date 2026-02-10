@@ -96,17 +96,18 @@ export function Structure() {
                 {/* 2. NOSSA VISÃO (Img Esq / Texto Dir) */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Placeholder Vídeo (Esquerda no Desktop) */}
+                    {/* Imagem Estrutura (Esquerda no Desktop) */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-                        className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-gray-900 border-4 border-white flex items-center justify-center order-2 lg:order-1"
+                        className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-gray-900 border-4 border-white flex items-center justify-center order-2 lg:order-1 group"
                     >
-                        <div className="text-center text-gray-500 p-6">
-                            <Video className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                            <p className="font-semibold text-lg text-gray-300">Espaço para Vídeo</p>
-                            <p className="text-sm text-gray-400">Sugestão: Vídeo institucional ou drone</p>
-                        </div>
-                        {/* Blob Decorativo */}
-                        <div className="absolute -z-10 -top-10 -left-10 w-40 h-40 bg-green-600/10 rounded-full blur-3xl"></div>
+                        <img
+                            src="/estrutura-arcoverde.jpg"
+                            alt="Estrutura de Armazenamento Indústria Arcoverde"
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                        {/* Overlay Gradiente */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </motion.div>
 
                     <motion.div
@@ -165,31 +166,29 @@ export function Structure() {
 
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-                        className="relative lg:sticky lg:top-32 w-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl bg-gray-200 border-4 border-white flex items-center justify-center"
+                        className="relative lg:sticky lg:top-32 w-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl bg-gray-200 border-4 border-white flex items-center justify-center group"
                     >
-                        <div className="text-center text-gray-400 p-6">
-                            <ImageIcon className="w-20 h-20 mx-auto mb-4 opacity-50" />
-                            <p className="font-semibold text-lg">Espaço para Imagem</p>
-                        </div>
-                        <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] pointer-events-none opacity-20">
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#F59E0B" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.2,-19.2,95.8,-4.9C93.4,9.4,81.8,23.1,70.8,35.2C59.8,47.3,49.4,57.8,37.3,65.3C25.2,72.8,11.4,77.3,-1.8,80.4C-15,83.5,-28.9,85.2,-41.2,79.5C-53.5,73.8,-64.2,60.7,-72.1,46.5C-80,32.3,-85.1,17,-83.4,2.5C-81.7,-12,-73.2,-25.7,-63.3,-37.2C-53.4,-48.7,-42.1,-58,-30.1,-66.4C-18.1,-74.8,-5.4,-82.3,4.9,-90.8L15.2,-99.3L44.7,-76.4Z" transform="translate(100 100)" />
-                            </svg>
-                        </div>
+                        <img
+                            src="/valores-arcoverde.jpg"
+                            alt="Equipe representando os valores da Indústria Arcoverde"
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </motion.div>
                 </div>
 
                 {/* 4. NOSSOS PRINCÍPIOS (Img Esq / Texto Dir) */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-                        className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-xl bg-gray-200 border-4 border-white flex items-center justify-center order-2 lg:order-1"
+                        className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-gray-900 border-4 border-white flex items-center justify-center order-2 lg:order-1 group"
                     >
-                        <div className="text-center text-gray-400 p-6">
-                            <Lightbulb className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                            <p className="font-semibold text-lg">Espaço para Imagem</p>
-                        </div>
-                        <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-yellow-600/10 rounded-full blur-3xl"></div>
+                        <img
+                            src="/principios-arcoverde.jpg"
+                            alt="Direção da Indústria Arcoverde reafirmando princípios"
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </motion.div>
 
                     <motion.div
@@ -250,11 +249,12 @@ export function Structure() {
                         initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
                         className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-gray-200 border-4 border-white flex items-center justify-center group"
                     >
-                        <div className="text-center text-gray-400 p-6">
-                            <Award className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                            <p className="font-semibold text-lg">Espaço para Imagem</p>
-                        </div>
-                        <div className="absolute -z-10 -bottom-10 -right-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl"></div>
+                        <img
+                            src="/qualidade-arcoverde.jpg"
+                            alt="Controle de qualidade laboratorial da Indústria Arcoverde"
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </motion.div>
                 </div>
 

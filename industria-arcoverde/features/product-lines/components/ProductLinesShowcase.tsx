@@ -23,7 +23,7 @@ export function ProductLinesShowcase() {
                 {/* Linha Arcoverde */}
                 <ProductLineCard
                     title="LINHA ARCOVERDE"
-                    description="Soluções profissionais de alta performance. A força necessária para os desafios pesados do dia a dia industrial e comercial."
+                    description="Cuidado que se sente em cada detalhe. A Linha Arcoverde combina alto desempenho na limpeza com fragrâncias marcantes para sua casa e suas roupas."
                     imageSrc="/lava-loucas-arcoverde-maca-verde.jpg"
                     href="/produtos/linha-arcoverde"
                     colors={{

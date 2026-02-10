@@ -57,20 +57,20 @@ export function ProductLineCard({ title, description, colors, imageSrc, reverse 
 
                 {/* Image / Placeholder Slot */}
                 <div className="flex-1 w-full flex items-center justify-center relative min-h-[300px] md:min-h-[400px]">
-                    <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-2xl md:translate-x-4 md:translate-y-4 transition-transform group-hover:translate-x-6 group-hover:translate-y-6" />
+                    <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-3xl md:translate-x-4 md:translate-y-4 transition-transform group-hover:translate-x-6 group-hover:translate-y-6" />
 
                     <div className="relative z-10 w-full h-full flex items-center justify-center">
                         {imageSrc ? (
-                            <div className="relative w-full h-[300px] md:h-[400px]">
+                            <div className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden">
                                 <Image
                                     src={imageSrc}
                                     alt={title}
                                     fill
-                                    className="object-contain drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-110"
                                 />
                             </div>
                         ) : (
-                            <div className="w-full h-[300px] md:h-[400px] border-4 border-dashed border-gray-300/50 rounded-2xl flex flex-col items-center justify-center text-center p-6 bg-white/50">
+                            <div className="w-full h-[300px] md:h-[400px] border-4 border-dashed border-gray-300/50 rounded-3xl flex flex-col items-center justify-center text-center p-6 bg-white/50">
                                 <span className="text-4xl mb-4">🖼️</span>
                                 <p className="text-gray-500 font-medium">Espaço para Imagem PNG</p>
                                 <p className="text-sm text-gray-400 mt-2">Recomendado: 800x800px (Fundo Transparente)</p>

@@ -11,25 +11,25 @@ const navLinks = [
   { name: "Home", href: "/" },
   {
     name: "Indústria Arcoverde",
-    href: "#industria",
+    href: "/#industria",
     children: [
-      { name: "Quem Somos", href: "#quem-somos" },
-      { name: "Estrutura", href: "#estrutura" },
-      { name: "Certificações", href: "#certificacoes" },
-      { name: "Sustentabilidade", href: "#sustentabilidade" },
+      { name: "Quem Somos", href: "/#quem-somos" },
+      { name: "Estrutura", href: "/#estrutura" },
+      { name: "Certificações", href: "/#certificacoes" },
+      { name: "Sustentabilidade", href: "/#sustentabilidade" },
     ],
   },
   {
     name: "Produtos",
-    href: "#produtos",
+    href: "/#produtos",
     children: [
       { name: "Linha Riso", href: "/produtos/linha-riso" },
       { name: "Linha Arcoverde", href: "/produtos/linha-arcoverde" },
       { name: "Linha Revolus", href: "/produtos/linha-revolus" },
     ],
   },
-  { name: "Dicas", href: "#dicas" },
-  { name: "Contato", href: "#contato" },
+  { name: "Dicas", href: "/#dicas" },
+  { name: "Contato", href: "/#contato" },
 ];
 
 export function Header() {
