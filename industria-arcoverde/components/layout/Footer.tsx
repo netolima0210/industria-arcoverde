@@ -66,7 +66,7 @@ export function Footer() {
 
                 <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
                     <p>© {new Date().getFullYear()} Indústria Arcoverde. Todos os direitos reservados.</p>
-                    <p className="mt-2 md:mt-0">
+                    <p className="mt-2 md:mt-0 md:mr-20">
                         Desenvolvido por <span className="font-semibold text-gray-600">N7tech</span>
                     </p>
                 </div>
