@@ -15,7 +15,7 @@ const navLinks = [
     children: [
       { name: "Quem Somos", href: "/#quem-somos" },
       { name: "Estrutura", href: "/#estrutura" },
-      { name: "Certificações", href: "/#certificacoes" },
+
       { name: "Sustentabilidade", href: "/#sustentabilidade" },
     ],
   },

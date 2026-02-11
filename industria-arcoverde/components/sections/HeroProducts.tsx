@@ -106,8 +106,8 @@ export function HeroProducts() {
     };
 
     return (
-        <section className="w-full pt-28">
-            <div className="relative w-full overflow-hidden bg-white group">
+        <section className="w-full pt-28 px-4 md:px-8 lg:px-12">
+            <div className="relative w-full overflow-hidden bg-white group rounded-[2rem] md:rounded-[3rem] shadow-lg">
                 {/* Scrollable Container */}
                 <div
                     ref={scrollRef}
