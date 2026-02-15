@@ -184,7 +184,7 @@ export function Structure() {
                         className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-gray-900 border-4 border-white flex items-center justify-center order-2 lg:order-1 group"
                     >
                         <img
-                            src="/principios-arcoverde.jpg"
+                            src="/equipe-arcoverde.jpg"
                             alt="Direção da Indústria Arcoverde reafirmando princípios"
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                         />

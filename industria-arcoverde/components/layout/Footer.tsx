@@ -1,3 +1,5 @@
+"use client";
+
 import { Facebook, Instagram, Youtube, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,14 +12,19 @@ export function Footer() {
                     {/* Logo Column (Optional/Placeholder based on existing style) */}
                     <div className="space-y-4">
                         <div className="relative w-96 h-40">
-                            {/* Assuming logo exists, using text if not, or just keeping it empty/minimal as requested structure primarily focused on Contato */}
-                            <Image
-                                src="/logo-arcoverde-v2.png"
-                                alt="Indústria Arcoverde"
-                                width={384}
-                                height={160}
-                                className="w-auto h-40 object-contain"
-                            />
+                            <Link
+                                href="/"
+                                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                                className="block w-full h-full cursor-pointer hover:opacity-90 transition-opacity"
+                            >
+                                <Image
+                                    src="/logo-arcoverde-v2.png"
+                                    alt="Indústria Arcoverde"
+                                    width={384}
+                                    height={160}
+                                    className="w-auto h-40 object-contain"
+                                />
+                            </Link>
                         </div>
                         <p className="text-gray-500 text-sm">
                             Qualidade e eficiência para sua casa e empresa.

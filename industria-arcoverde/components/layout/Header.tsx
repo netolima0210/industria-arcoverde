@@ -58,7 +58,8 @@ export function Header() {
         {/* Logo - Left */}
         <Link
           href="/"
-          className="relative z-10 flex-shrink-0 transition-transform hover:scale-105"
+          className="relative z-10 flex-shrink-0 transition-transform hover:scale-105 cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <Image
             src="/logo-arcoverde-v2.png"
