@@ -1,6 +1,7 @@
 import { HeroProducts } from "@/components/sections/HeroProducts";
 import { About } from "@/components/sections/About";
 import { Structure } from "@/components/sections/Structure";
+import { Sustainability } from "@/components/sections/Sustainability";
 import { TipsSection } from "@/features/tips";
 import { ProductLinesShowcase } from "@/features/product-lines";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <ProductLinesShowcase />
       <About />
       <Structure />
+      <Sustainability />
       <TipsSection />
     </main>
   );

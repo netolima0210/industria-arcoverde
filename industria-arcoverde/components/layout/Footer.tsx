@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Youtube, ChevronRight } from "lucide-react";
+import { Facebook, Instagram, Youtube, ChevronRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -64,9 +64,21 @@ export function Footer() {
                             </a>
                         </div>
 
-                        <div className="flex items-center text-gray-500 font-medium">
-                            <span className="mr-2">☎️</span>
-                            87 3821.0455
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center text-gray-500 font-medium">
+                                <span className="mr-2">☎️</span>
+                                87 3821.0455
+                            </div>
+
+                            <a
+                                href="https://maps.google.com/?q=Rua+Otaviano+Neves,+02+-+Cardeal+-+Arcoverde+-+PE"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start text-gray-500 hover:text-[#0ea5e9] transition-colors group text-sm leading-tight"
+                            >
+                                <MapPin className="h-5 w-5 mr-2 text-[#eab308] flex-shrink-0" />
+                                <span>Rua. Otaviano Neves, 02 - Cardeal<br />Arcoverde - PE</span>
+                            </a>
                         </div>
                     </div>
                 </div>
