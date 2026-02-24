@@ -162,7 +162,7 @@ export function HeroProducts() {
                             className="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-300 ease-out"
                             style={{
                                 width: `${100 / banners.length}%`,
-                                x: `${scrollProgress * (banners.length - 1) / banners.length}%`
+                                left: `${scrollProgress * (banners.length - 1) / banners.length}%`
                             }}
                         />
                     </div>
