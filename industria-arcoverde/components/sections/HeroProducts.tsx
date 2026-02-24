@@ -6,15 +6,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const banners = [
     {
-        src: "/hero-riso-v3.jpg",
+        src: "/produtos/bunners/WhatsApp Image 2026-02-23 at 16.20.52.jpeg",
         alt: "Linha Riso - Qualidade e Tradição",
     },
     {
-        src: "/hero-arco-verde-v3.jpg",
+        src: "/produtos/bunners/WhatsApp Image 2026-02-23 at 16.20.54.jpeg",
         alt: "Linha Arco Verde - Performance e Limpeza",
     },
     {
-        src: "/hero-revolus-v3.jpg",
+        src: "/produtos/bunners/WhatsApp Image 2026-02-23 at 16.23.52.jpeg",
         alt: "Linha Revolus - Tecnologia Industrial",
     }
 ];

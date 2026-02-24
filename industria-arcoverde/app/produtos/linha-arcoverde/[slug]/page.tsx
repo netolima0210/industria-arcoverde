@@ -142,7 +142,7 @@ export default function ProductDetailPage() {
                         {/* CTA - Contato */}
                         <div className="pt-6">
                             <a
-                                href="https://wa.me/5500000000000"
+                                href="https://wa.me/558738210455?text=ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Industria%20Arcoverde"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-green-600/30"

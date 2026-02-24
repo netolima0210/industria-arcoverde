@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 export function WhatsAppBtn() {
     return (
         <a
-            href="https://wa.me/558738210455"
+            href="https://wa.me/558738210455?text=ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Industria%20Arcoverde"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 p-3 md:p-4 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center justify-center animate-in fade-in zoom-in"

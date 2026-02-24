@@ -137,7 +137,7 @@ export function Header() {
         {/* Right Section: Suporte & Mobile Toggle */}
         <div className="relative z-10 flex items-center gap-6">
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/558738210455?text=ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Industria%20Arcoverde"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:flex items-center px-5 py-2.5 rounded-full bg-white/10 text-white font-bold text-sm hover:bg-white hover:text-[#0D1B4C] transition-all duration-300 transform hover:scale-105"
@@ -198,7 +198,7 @@ export function Header() {
 
               <div className="pt-4 border-t border-gray-100 mt-2">
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/558738210455?text=ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Industria%20Arcoverde"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full justify-center items-center px-5 py-3 rounded-xl bg-primary text-white font-bold text-base hover:bg-primary/90 transition-all"
