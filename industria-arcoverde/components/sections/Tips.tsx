@@ -103,17 +103,6 @@ export function Tips() {
                                         <CardHeader>
                                             <CardTitle className="line-clamp-2 text-xl">{dica.titulo}</CardTitle>
                                         </CardHeader>
-                                        <CardContent className="flex-1">
-                                            <p className="text-gray-600 line-clamp-3">
-                                                {dica.conteudo}
-                                            </p>
-                                        </CardContent>
-                                        <CardFooter className="pt-4 border-t border-gray-100 mt-auto">
-                                            <div className="flex items-center text-sm text-gray-400">
-                                                <Calendar className="mr-2 h-4 w-4" />
-                                                {new Date(dica.created_at).toLocaleDateString('pt-BR')}
-                                            </div>
-                                        </CardFooter>
                                     </Card>
                                 )}
                             </motion.div>
