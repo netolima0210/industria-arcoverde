@@ -67,7 +67,7 @@ export function Tips() {
                         <p className="text-gray-400 mt-2">Estamos preparando conteúdos especiais para você.</p>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         {dicas.map((dica, index) => (
                             <motion.div
                                 key={dica.id}
@@ -77,44 +77,45 @@ export function Tips() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="h-full"
                             >
-                                <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                                    <div className={`h-48 bg-slate-100 w-full relative ${dica.imagem_url ? "cursor-pointer group/img" : ""}`}
-                                        onClick={() => dica.imagem_url && setImagemAberta(dica.imagem_url)}
+                                {dica.imagem_url ? (
+                                    <div
+                                        className="cursor-pointer group/img relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                                        onClick={() => setImagemAberta(dica.imagem_url)}
                                     >
-                                        {dica.imagem_url ? (
-                                            <>
-                                                <img
-                                                    src={dica.imagem_url}
-                                                    alt={dica.titulo}
-                                                    className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
-                                                />
-                                                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                                                    <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
-                                                        Clique para ampliar
-                                                    </span>
-                                                </div>
-                                            </>
-                                        ) : (
+                                        <img
+                                            src={dica.imagem_url}
+                                            alt={dica.titulo}
+                                            className="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                                            <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
+                                                Clique para ampliar
+                                            </span>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                        <div className="h-48 bg-slate-100 w-full relative">
                                             <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400">
                                                 <span className="text-sm font-medium">Sem Imagem</span>
                                             </div>
-                                        )}
-                                    </div>
-                                    <CardHeader>
-                                        <CardTitle className="line-clamp-2 text-xl">{dica.titulo}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="flex-1">
-                                        <p className="text-gray-600 line-clamp-3">
-                                            {dica.conteudo}
-                                        </p>
-                                    </CardContent>
-                                    <CardFooter className="pt-4 border-t border-gray-100 mt-auto">
-                                        <div className="flex items-center text-sm text-gray-400">
-                                            <Calendar className="mr-2 h-4 w-4" />
-                                            {new Date(dica.created_at).toLocaleDateString('pt-BR')}
                                         </div>
-                                    </CardFooter>
-                                </Card>
+                                        <CardHeader>
+                                            <CardTitle className="line-clamp-2 text-xl">{dica.titulo}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="flex-1">
+                                            <p className="text-gray-600 line-clamp-3">
+                                                {dica.conteudo}
+                                            </p>
+                                        </CardContent>
+                                        <CardFooter className="pt-4 border-t border-gray-100 mt-auto">
+                                            <div className="flex items-center text-sm text-gray-400">
+                                                <Calendar className="mr-2 h-4 w-4" />
+                                                {new Date(dica.created_at).toLocaleDateString('pt-BR')}
+                                            </div>
+                                        </CardFooter>
+                                    </Card>
+                                )}
                             </motion.div>
                         ))}
                     </div>
