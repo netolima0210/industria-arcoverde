@@ -45,11 +45,7 @@ export function TipsList({ tips }: TipsListProps) {
                                         alt={dica.titulo}
                                         className="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                                        <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
-                                            Clique para ampliar
-                                        </span>
-                                    </div>
+                                    <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300" />
                                 </div>
                             ) : (
                                 <h3 className="text-xl font-bold text-gray-900">{dica.titulo}</h3>
