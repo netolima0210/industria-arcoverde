@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { Dica } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Calendar, X } from "lucide-react";
+import { X } from "lucide-react";
 
 export function Tips() {
     const [dicas, setDicas] = useState<Dica[]>([]);
@@ -67,46 +66,39 @@ export function Tips() {
                         <p className="text-gray-400 mt-2">Estamos preparando conteúdos especiais para você.</p>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        {dicas.map((dica, index) => (
-                            <motion.div
-                                key={dica.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="h-full"
-                            >
-                                {dica.imagem_url ? (
-                                    <div
-                                        className="cursor-pointer group/img relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
-                                        onClick={() => setImagemAberta(dica.imagem_url)}
-                                    >
-                                        <img
-                                            src={dica.imagem_url}
-                                            alt={dica.titulo}
-                                            className="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                                            <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
-                                                Clique para ampliar
-                                            </span>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                                        <div className="h-48 bg-slate-100 w-full relative">
-                                            <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400">
-                                                <span className="text-sm font-medium">Sem Imagem</span>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                        {dicas.map((dica, index) => {
+                            const temImagem = Boolean(dica.imagem_url);
+                            return (
+                                <motion.div
+                                    key={dica.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="flex flex-col gap-3"
+                                >
+                                    {temImagem && (
+                                        <div
+                                            className="cursor-pointer group/img relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                                            onClick={() => setImagemAberta(dica.imagem_url!)}
+                                        >
+                                            <img
+                                                src={dica.imagem_url!}
+                                                alt={dica.titulo}
+                                                className="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                                                <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
+                                                    Clique para ampliar
+                                                </span>
                                             </div>
                                         </div>
-                                        <CardHeader>
-                                            <CardTitle className="line-clamp-2 text-xl">{dica.titulo}</CardTitle>
-                                        </CardHeader>
-                                    </Card>
-                                )}
-                            </motion.div>
-                        ))}
+                                    )}
+                                    <h3 className="text-xl font-bold text-gray-900">{dica.titulo}</h3>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 )}
             </div>
