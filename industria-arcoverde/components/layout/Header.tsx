@@ -90,6 +90,9 @@ export function Header() {
                     if (link.name === "Home") {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
+                    if (link.name === "Contato") {
+                      document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+                    }
                   }}
                   className={cn(
                     "relative text-base font-medium transition-colors flex items-center gap-1 py-2",
@@ -174,6 +177,9 @@ export function Header() {
                       if (!link.children) setIsMobileMenuOpen(false);
                       if (link.name === "Home") {
                         window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                      if (link.name === "Contato") {
+                        document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
                   >
