@@ -79,6 +79,29 @@ export const produtosLinhaRevolus: ProdutoRevolus[] = [
         codigo: "RV-DC-004",
         imagem: "/produtos/linha-revolus/neutro-5l.png",
     },
+    // === DETERGENTE AUTOMOTIVO ===
+    {
+        id: 7,
+        slug: "automotivo-20l",
+        nome: "Detergente Concentrado Automotivo 20L",
+        categoria: "Detergente Automotivo",
+        slogan: "+Economia +Rendimento",
+        descricao: "O Detergente Concentrado Automotivo Revolus realça o brilho e oferece alto rendimento na limpeza de veículos, caminhões e frotas. Fórmula concentrada que remove sujeiras pesadas com economia.",
+        embalagem: "20L",
+        codigo: "RV-DA-007",
+        imagem: "/produtos/linha-revolus/automotivo-20l.png",
+    },
+    {
+        id: 8,
+        slug: "automotivo-5l",
+        nome: "Detergente Concentrado Automotivo 5L",
+        categoria: "Detergente Automotivo",
+        slogan: "+Economia +Rendimento",
+        descricao: "O Detergente Concentrado Automotivo Revolus em versão 5L oferece praticidade e alto rendimento para limpeza automotiva. Realça o brilho e remove sujeiras pesadas com economia.",
+        embalagem: "5L",
+        codigo: "RV-DA-008",
+        imagem: "/produtos/linha-revolus/automotivo-5l.png",
+    },
 ];
 
 // Função para buscar produto por slug

@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { Dica } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Calendar } from "lucide-react";
+import { Calendar, X } from "lucide-react";
 
 export function Tips() {
     const [dicas, setDicas] = useState<Dica[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [imagemAberta, setImagemAberta] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchDicas() {
@@ -77,14 +78,22 @@ export function Tips() {
                                 className="h-full"
                             >
                                 <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                                    {/* Placeholder for now if imagem_url exists we would use Next/Image */}
-                                    <div className="h-48 bg-slate-100 w-full relative">
+                                    <div className={`h-48 bg-slate-100 w-full relative ${dica.imagem_url ? "cursor-pointer group/img" : ""}`}
+                                        onClick={() => dica.imagem_url && setImagemAberta(dica.imagem_url)}
+                                    >
                                         {dica.imagem_url ? (
-                                            <img
-                                                src={dica.imagem_url}
-                                                alt={dica.titulo}
-                                                className="w-full h-full object-cover"
-                                            />
+                                            <>
+                                                <img
+                                                    src={dica.imagem_url}
+                                                    alt={dica.titulo}
+                                                    className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
+                                                />
+                                                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                                                    <span className="text-white text-sm font-medium opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/50 px-3 py-1 rounded-full">
+                                                        Clique para ampliar
+                                                    </span>
+                                                </div>
+                                            </>
                                         ) : (
                                             <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400">
                                                 <span className="text-sm font-medium">Sem Imagem</span>
@@ -111,6 +120,40 @@ export function Tips() {
                     </div>
                 )}
             </div>
+
+            {/* Modal de imagem ampliada */}
+            <AnimatePresence>
+                {imagemAberta && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+                        onClick={() => setImagemAberta(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25 }}
+                            className="relative max-w-2xl max-h-[85vh]"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setImagemAberta(null)}
+                                className="absolute -top-3 -right-3 z-10 bg-white rounded-full p-1.5 shadow-lg hover:bg-gray-100 transition-colors"
+                            >
+                                <X className="h-5 w-5 text-gray-700" />
+                            </button>
+                            <img
+                                src={imagemAberta}
+                                alt="Dica ampliada"
+                                className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
