@@ -102,6 +102,29 @@ export const produtosLinhaRevolus: ProdutoRevolus[] = [
         codigo: "RV-DA-008",
         imagem: "/produtos/linha-revolus/automotivo-5l.png",
     },
+    // === LIMPA PLACA SOLAR ===
+    {
+        id: 9,
+        slug: "limpa-placa-solar-20l",
+        nome: "Limpa Placa Solar Revolus 20L",
+        categoria: "Limpa Placa Solar",
+        slogan: "+Economia +Rendimento",
+        descricao: "O Limpa Placa Solar Revolus foi especialmente elaborado para eliminar a sujidade acumulada nos painéis solares. Composto por tensoativo biodegradável e fórmula não abrasiva, não danifica as placas nem provoca manchas, além de prevenir a corrosão. Forma uma película protetora sobre a superfície, mantendo-a limpa por mais tempo e protegendo contra chuva, fuligem e poeira.",
+        embalagem: "20L",
+        codigo: "RV-LP-009",
+        imagem: "/produtos/linha-revolus/limpa-placa-solar-20l.png",
+    },
+    {
+        id: 10,
+        slug: "limpa-placa-solar-5l",
+        nome: "Limpa Placa Solar Revolus 5L",
+        categoria: "Limpa Placa Solar",
+        slogan: "+Economia +Rendimento",
+        descricao: "O Limpa Placa Solar Revolus em versão 5L oferece praticidade na limpeza de painéis solares. Tensoativo biodegradável e fórmula não abrasiva que não danifica as placas nem provoca manchas, prevenindo a corrosão e formando película protetora contra chuva, fuligem e poeira.",
+        embalagem: "5L",
+        codigo: "RV-LP-010",
+        imagem: "/produtos/linha-revolus/limpa-placa-solar-5l.png",
+    },
 ];
 
 // Função para buscar produto por slug
