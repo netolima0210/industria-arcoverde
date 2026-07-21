@@ -21,7 +21,7 @@ export function Sustainability() {
                     >
                         <img
                             src="/papa-oleo-mascote.jpg"
-                            alt="Mascote Papa Óleo - Projeto de Sustentabilidade Arcoverde"
+                            alt="Mascote Papa Óleo - Programa de Sustentabilidade Arcoverde"
                             className="w-52 h-52 md:w-72 md:h-72 object-contain drop-shadow-2xl rounded-2xl"
                         />
                     </motion.div>
@@ -35,7 +35,7 @@ export function Sustainability() {
                         className="flex-1 text-center px-4 md:px-8"
                     >
                         <h3 className="text-white font-bold text-xl md:text-3xl leading-snug mb-3 drop-shadow-sm">
-                            🌱 Projeto Papa Óleo
+                            🌱 Programa Papa Óleo
                         </h3>
                         <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
                             Há mais de <strong className="text-yellow-300">5 anos</strong>, a Indústria Arcoverde coleta mais de{" "}
@@ -54,7 +54,7 @@ export function Sustainability() {
                     >
                         <img
                             src="/papa-oleo-selo.jpg"
-                            alt="Selo Projeto Papa Óleo - 5.000L de Óleo Recuperado por Mês"
+                            alt="Selo Programa Papa Óleo - 5.000L de Óleo Recuperado por Mês"
                             className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-2xl rounded-full"
                         />
                     </motion.div>

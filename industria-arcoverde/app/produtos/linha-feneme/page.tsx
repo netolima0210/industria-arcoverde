@@ -1,46 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { getProductsByCategoryArcoVerde, ProdutoArcoVerde } from "@/data/linha-arcoverde";
+import { getProductsByCategoryFeneme, ProdutoFeneme } from "@/data/linha-feneme";
 
 // Ordem das categorias para exibição
 const categoriasOrdem = [
-    "Amaciantes",
-    "Lava-Roupas",
-    "Limpa Alumínio",
-    "Lava-Louças",
-    "Limpador Perfumado",
-    "Pastilha Arcoverde",
-    "Sabão Arcoverde Multiuso",
-    "Sabão Arcoverde",
-    "Naftalina",
+    "Sabão Fenemê",
 ];
 
 // Categorias que já têm imagens reais
-const categoriasComImagem = ["Amaciantes", "Lava-Roupas", "Limpa Alumínio", "Lava-Louças", "Limpador Perfumado", "Pastilha Arcoverde", "Sabão Arcoverde Multiuso", "Sabão Arcoverde", "Naftalina"];
+const categoriasComImagem = ["Sabão Fenemê"];
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.15 },
-    },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: "easeOut" as const },
-    },
-};
-
-export default function LinhaArcoVerdePage() {
-    const produtosPorCategoria = getProductsByCategoryArcoVerde();
+export default function LinhaFenemePage() {
+    const produtosPorCategoria = getProductsByCategoryFeneme();
 
     // Ordenar categorias conforme a ordem desejada
     const categoriasOrdenadas = categoriasOrdem
@@ -62,17 +36,16 @@ export default function LinhaArcoVerdePage() {
                         className="lg:col-span-4 lg:sticky lg:top-32"
                     >
                         {/* Decorative Line */}
-                        <div className="w-16 h-1 bg-emerald-600 mb-6"></div>
+                        <div className="w-16 h-1 bg-blue-600 mb-6"></div>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-emerald-600 leading-tight mb-6">
-                            Linha Arcoverde
+                        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 leading-tight mb-6">
+                            Linha Fenemê
                         </h1>
 
                         <p className="text-gray-600 text-base leading-relaxed">
-                            A Linha Arcoverde oferece produtos de alta qualidade para o cuidado
-                            das suas roupas e da sua casa. Fórmulas modernas que unem eficiência
-                            de limpeza com fragrâncias marcantes e duradouras, proporcionando
-                            uma experiência premium em cada uso.
+                            A Linha Fenemê traz a tradição do sabão glicerinado em barra,
+                            unindo poder de limpeza e cuidado com suas roupas e louças.
+                            Qualidade clássica e confiável para o dia a dia da sua casa.
                         </p>
                     </div>
 
@@ -89,7 +62,7 @@ export default function LinhaArcoVerdePage() {
 
                                 {/* Products Grid */}
                                 <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                                    {categoria.produtos.map((produto: ProdutoArcoVerde, index: number) => (
+                                    {categoria.produtos.map((produto: ProdutoFeneme, index: number) => (
                                         <div
                                             key={produto.id}
                                             className={cn(
@@ -99,19 +72,13 @@ export default function LinhaArcoVerdePage() {
                                             )}
                                         >
                                             <Link
-                                                href={`/produtos/linha-arcoverde/${produto.slug}`}
+                                                href={`/produtos/linha-feneme/${produto.slug}`}
                                                 className="flex flex-col items-center w-full cursor-pointer"
                                             >
                                                 {/* Renderiza imagem se a categoria tem imagens */}
                                                 {categoria.temImagem ? (
                                                     <>
-                                                        <div className={cn(
-                                                            "relative w-full flex items-end justify-center p-2 mb-2",
-                                                            // Ajuste de altura condicional para evitar espaços vazios excessivos
-                                                            ["Sabão Arco Verde Multiuso", "Sabão Arco Verde", "Pastilha Arco Verde", "Naftalina"].includes(categoria.nome)
-                                                                ? "h-40"
-                                                                : "h-64"
-                                                        )}>
+                                                        <div className="relative w-full flex items-end justify-center p-2 mb-2 h-40">
                                                             <Image
                                                                 src={produto.imagem}
                                                                 alt={produto.nome}
@@ -120,13 +87,13 @@ export default function LinhaArcoVerdePage() {
                                                                 className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
                                                             />
                                                         </div>
-                                                        <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-emerald-600 transition-colors">
+                                                        <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-blue-600 transition-colors">
                                                             {produto.nome}
                                                         </h3>
                                                     </>
                                                 ) : (
-                                                    <div className="flex flex-col items-center justify-center w-full p-6 bg-gray-50 hover:bg-emerald-50 rounded-xl border border-gray-200 hover:border-emerald-300 transition-all duration-300 min-h-[120px]">
-                                                        <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-emerald-600 transition-colors">
+                                                    <div className="flex flex-col items-center justify-center w-full p-6 bg-gray-50 hover:bg-blue-50 rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 min-h-[120px]">
+                                                        <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center group-hover:text-blue-600 transition-colors">
                                                             {produto.nome}
                                                         </h3>
                                                         <span className="text-xs text-gray-500 mt-2">{produto.embalagem}</span>

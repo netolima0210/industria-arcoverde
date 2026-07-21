@@ -102,7 +102,7 @@ export default function LinhaRisoPage() {
                                                 <div className={cn(
                                                     "relative w-full flex items-end justify-center p-2 mb-2",
                                                     // Ajuste para produtos menores (Naftalina, Sabão)
-                                                    ["Naftalina", "Sabão Feneme", "Sabão Arco Verde"].some(cat => categoria.nome.includes(cat)) || categoria.nome.includes("Sabão")
+                                                    ["Naftalina", "Sabão Arco Verde"].some(cat => categoria.nome.includes(cat)) || categoria.nome.includes("Sabão")
                                                         ? "h-40"
                                                         : "h-64"
                                                 )}>

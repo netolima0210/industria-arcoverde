@@ -46,6 +46,20 @@ export function ProductLinesShowcase() {
                         accent: "bg-yellow-500 hover:bg-yellow-600"
                     }}
                 />
+
+                {/* Linha Fenemê */}
+                <ProductLineCard
+                    title="LINHA FENEMÊ"
+                    description="A tradição do sabão glicerinado em barra. Poder de limpeza e cuidado com suas roupas e louças, com a qualidade clássica que sua casa merece."
+                    imageSrc="/produtos/linha-feneme/sabao-feneme-tradicional-400g.png"
+                    href="/produtos/linha-feneme"
+                    colors={{
+                        bg: "from-blue-50 to-indigo-50",
+                        text: "text-blue-600",
+                        accent: "bg-blue-500 hover:bg-blue-600"
+                    }}
+                    reverse
+                />
             </div>
         </section>
     );

@@ -404,30 +404,6 @@ export const produtosLinhaArcoVerde: ProdutoArcoVerde[] = [
         imagem: "/produtos/linha-arcoverde/sabao-tradicional-400g.png",
     },
 
-    // === SABÃO FENEME ===
-    {
-        id: 35,
-        slug: "sabao-feneme-tradicional-400g",
-        nome: "Sabão Fenemê Tradicional",
-        categoria: "Sabão Feneme",
-        slogan: "A tradição do Sabão Glicerinado.",
-        descricao: "O Sabão Fenemê Tradicional oferece a qualidade clássica do sabão glicerinado para uma limpeza eficiente e cuidado com suas roupas e louças.",
-        embalagem: "400g",
-        codigo: "AV-SF-001",
-        imagem: "/produtos/linha-arcoverde/sabao-feneme-tradicional-400g.png",
-    },
-    {
-        id: 36,
-        slug: "sabao-feneme-plus-neutro-400g",
-        nome: "Sabão Fenemê Plus Neutro",
-        categoria: "Sabão Feneme",
-        slogan: "Glicerinado Plus Neutro.",
-        descricao: "O Sabão Fenemê Plus Neutro combina o poder de limpeza do sabão glicerinado com uma fórmula neutra para diversos usos domésticos.",
-        embalagem: "400g",
-        codigo: "AV-SF-002",
-        imagem: "/produtos/linha-arcoverde/sabao-feneme-plus-neutro-400g.png",
-    },
-
     // === NAFTALINA ===
     {
         id: 37,
